@@ -14,7 +14,9 @@ addToList.addEventListener("click", (addClick) => {
     photoURL,
     description
   );
-  document.getElementById("bootstrap_card").appendChild(newCard);
+  document.getElementById("destination_display").appendChild(newCard);
+
+  document.getElementById("wishlist_heading").innerText = "My WishList";
 });
 
 //Function to create a card for every new information
@@ -63,7 +65,17 @@ function createCard(destinationName, location, photoURL, description) {
   editBtn.setAttribute("class", "btn btn-edit");
   editBtn.innerHTML = "Edit";
   editBtn.addEventListener("click", (editClick) => {
-    alert("Edit Clicked");
+    let newPhoto = editClick.target.parentElement.parentElement.children[0];
+    let newDestination =
+      editClick.target.parentElement.parentElement.children[1].children[0];
+    let newLocation =
+      editClick.target.parentElement.parentElement.children[1].children[1];
+    let newDescription =
+      editClick.target.parentElement.parentElement.children[1].children[2];
+    newDestination.innerHTML = prompt("Enter new destination");
+    newLocation.innerHTML = prompt("Enter new location");
+    newPhoto.setAttribute("src", prompt("Enter new photo URL"));
+    newDescription.innerHTML = prompt("Enter new description");
   });
   cardBtns.appendChild(editBtn);
 
@@ -72,7 +84,7 @@ function createCard(destinationName, location, photoURL, description) {
   removeBtn.setAttribute("class", "btn btn-remove");
   removeBtn.innerHTML = "Remove";
   removeBtn.addEventListener("click", (removeClick) => {
-    alert("Remove Clicked");
+    removeClick.target.parentElement.parentElement.remove();
   });
   cardBtns.appendChild(removeBtn);
 
