@@ -9,7 +9,12 @@
   border: 2px solid red;
 }
 
-#destination_detail {
+#destination_display {
   display: inline-block;
   border: 2px solid blue;
+}
+
+#card-img-top {
+  width: 50px;
+  height: 50px;
 }
