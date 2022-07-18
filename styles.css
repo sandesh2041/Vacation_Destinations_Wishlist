@@ -3,3 +3,13 @@
   padding: 50px;
   text-align: center;
 }
+
+#form_section {
+  display: inline-block;
+  border: 2px solid red;
+}
+
+#destination_detail {
+  display: inline-block;
+  border: 2px solid blue;
+}
